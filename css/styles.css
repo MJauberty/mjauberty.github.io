@@ -165,3 +165,27 @@ body.dark-mode .theme-toggle .circle {
   transform: translateX(30px);
   background: #bb86fc; 
 }
+
+
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+
+.about-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; 
+  object-fit: cover;  
+  flex-shrink: 0;     
+  border: 3px solid #ccc; 
+}
+
+@media (max-width: 600px) {
+  .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+}
