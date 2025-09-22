@@ -7,9 +7,15 @@
   <link rel="stylesheet" href="css/styles.css">
   <meta name="google-site-verification" content="3KxFfBGrziEb-vFwMsVlN6qjuEU8TqZF3uDy17XmCuY" />
 </head>
+
+
 <body>
   <div class="container">
+      <div class="theme-toggle" id="toggle-theme">
+      <div class="circle"></div>
+      </div>
     <header>
+
       <h1>Maxence Jauberty</h1>
       <p>Master's Student in Computer Science (Mostly Cryptology)</p>
     </header>
@@ -69,5 +75,28 @@
       &copy; 2025 Maxence Jauberty
     </footer>
   </div>
+<script>
+  const toggleBtn = document.getElementById("toggle-theme");
+  const body = document.body;
+
+  // Vérifie si un thème est déjà stocké
+  if (localStorage.getItem("theme")) {
+    body.className = localStorage.getItem("theme");
+  } else {
+    body.className = "light-mode"; // par défaut
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    if (body.classList.contains("light-mode")) {
+      body.className = "dark-mode";
+      localStorage.setItem("theme", "dark-mode");
+    } else {
+      body.className = "light-mode";
+      localStorage.setItem("theme", "light-mode");
+    }
+  });
+</script>
+
 </body>
+
 </html>

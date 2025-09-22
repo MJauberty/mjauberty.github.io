@@ -1,70 +1,167 @@
 * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #3e3a30; 
-      background: linear-gradient(135deg, #f4f2eb 0%, #faf9f5 100%);
-      line-height: 1.6;
-      padding: 20px;
-    }
-    a {
-      color: #b28a26; 
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    a:hover {
-      color: #8c6c1d; 
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      background: #fbfaf7;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(178, 138, 38, 0.12);
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    header h1 {
-      font-size: 2.6rem;
-      margin-bottom: 10px;
-      color: #6e5a1f; 
-    }
-    header p {
-      font-size: 1.1rem;
-      color: #5a5446; 
-    }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
 
-    section {
-      margin-bottom: 40px;
-    }
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: #b28a26; 
-      border-bottom: 2px solid #e2d6a3; 
-      padding-bottom: 5px;
-    }
-    section ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    section li {
-      margin-bottom: 15px;
-    }
-    section li strong {
-      color: #6e5a1f; 
-    }
 
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      font-size: 0.9rem;
-      color: #7b7466;
-    }
+body.light-mode {
+  color: #3e3a30;
+  background: linear-gradient(135deg, #f4f2eb 0%, #faf9f5 100%);
+}
+
+body.light-mode a {
+  color: #b28a26;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+body.light-mode a:hover {
+  color: #8c6c1d;
+}
+
+body.light-mode .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: #fbfaf7;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(178, 138, 38, 0.12);
+}
+
+body.light-mode header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+body.light-mode header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+  color: #6e5a1f;
+}
+body.light-mode header p {
+  font-size: 1.1rem;
+  color: #5a5446;
+}
+
+body.light-mode section {
+  margin-bottom: 40px;
+}
+body.light-mode section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #b28a26;
+  border-bottom: 2px solid #e2d6a3;
+  padding-bottom: 5px;
+}
+body.light-mode section li {
+  margin-bottom: 15px;
+}
+body.light-mode section li strong {
+  color: #6e5a1f;
+}
+
+body.light-mode footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.9rem;
+  color: #7b7466;
+}
+
+
+body.dark-mode {
+  color: #e5e5e5;
+  background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+}
+
+body.dark-mode a {
+  color: #bb86fc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+body.dark-mode a:hover {
+  color: #ff79c6;
+}
+
+body.dark-mode .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: #1c1c1c;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+body.dark-mode header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+  color: #bb86fc;
+}
+body.dark-mode header p {
+  font-size: 1.1rem;
+  color: #a1a1a1;
+}
+
+body.dark-mode section {
+  margin-bottom: 40px;
+}
+body.dark-mode section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #ff79c6;
+  border-bottom: 2px solid #2e2e2e;
+  padding-bottom: 5px;
+}
+body.dark-mode section li {
+  margin-bottom: 15px;
+}
+body.dark-mode section li strong {
+  color: #8be9fd;
+}
+
+body.dark-mode footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 30px;
+  background: #ccc;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  transition: background 0.3s;
+}
+
+.theme-toggle .circle {
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s, background 0.3s;
+}
+
+
+body.dark-mode .theme-toggle {
+  background: #444;
+}
+body.dark-mode .theme-toggle .circle {
+  transform: translateX(30px);
+  background: #bb86fc; 
+}

@@ -8,6 +8,10 @@
 </head>
 <body>
     <div class="container">
+      <div class="theme-toggle" id="toggle-theme">
+      <div class="circle"></div>
+      </div>
+    <div class="container">
     <section>
         <h2>Comment je vous note ?</h2>
         <p>
@@ -25,5 +29,26 @@
             Si vous ne comprenez pas une preuve, vous pouvez en discuter entre vous et sinon avec moi.
         </p>
     </section>
+    <script>
+  const toggleBtn = document.getElementById("toggle-theme");
+  const body = document.body;
+
+  // Vérifie si un thème est déjà stocké
+  if (localStorage.getItem("theme")) {
+    body.className = localStorage.getItem("theme");
+  } else {
+    body.className = "light-mode"; // par défaut
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    if (body.classList.contains("light-mode")) {
+      body.className = "dark-mode";
+      localStorage.setItem("theme", "dark-mode");
+    } else {
+      body.className = "light-mode";
+      localStorage.setItem("theme", "light-mode");
+    }
+  });
+</script>
     </div>
 </body>
