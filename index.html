@@ -85,11 +85,11 @@
   const toggleBtn = document.getElementById("toggle-theme");
   const body = document.body;
 
-  // Vérifie si un thème est déjà stocké
+  
   if (localStorage.getItem("theme")) {
     body.className = localStorage.getItem("theme");
   } else {
-    body.className = "light-mode"; // par défaut
+    body.className = "light-mode"; 
   }
 
   toggleBtn.addEventListener("click", () => {
