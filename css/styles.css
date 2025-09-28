@@ -181,8 +181,10 @@ body.dark-mode .theme-toggle .circle {
   object-fit: cover;  
   flex-shrink: 0;     
   border: 3px solid #ccc;
-  margin: 50px;  
-  margin-bottom: 10px;
+  margin: 0px; 
+  margin-left: 10px; 
+  margin-right: 10px; 
+  margin-bottom: 0px;
 }
 
 @media (max-width: 600px) {
@@ -190,4 +192,51 @@ body.dark-mode .theme-toggle .circle {
     flex-direction: column;
     text-align: center;
   }
+}
+
+.social-links {
+  margin: 24px 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.social-links a {
+  --size: 44px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: #f4f4f4;
+  text-decoration: none;
+  box-shadow: 0 0 0 0 rgba(0,0,0,.08);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, opacity .18s ease;
+  opacity: .95;
+}
+
+.social-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  background: #111;
+  opacity: 1;
+}
+
+.social-links svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  color: #222;
+}
+.social-links a:hover svg {
+  color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .social-links a { background: #1f1f1f; }
+  .social-links svg { color: #ddd; }
+  .social-links a:hover { background: #fff; }
+  .social-links a:hover svg { color: #000; }
 }
